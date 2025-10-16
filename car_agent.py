@@ -107,3 +107,43 @@ def ask_question():
 def exit_app():
     root.destroy()
 
+#  GUI Blackboard AI Style 
+root = tk.Tk()
+root.title("Car Agent AI")
+root.geometry("550x600")
+root.configure(bg="#1e1e1e")  # fond sombre
+
+# Header
+header = tk.Frame(root, bg="#121212", height=60)
+header.pack(fill=tk.X)
+tk.Label(header, text="🚘 Car Agent AI", bg="#121212", fg="#00ffcc", font=("Arial", 16, "bold")).pack(side=tk.LEFT, padx=15)
+
+# Chat area
+chat_area = scrolledtext.ScrolledText(
+    root, wrap=tk.WORD, font=("Arial", 12), bg="#1e1e1e", fg="white",
+    insertbackground="white", state='normal'
+)
+chat_area.pack(padx=10, pady=10, fill=tk.BOTH, expand=True)
+
+chat_area.tag_config("user", foreground="white", background="#0078D7", lmargin1=50, lmargin2=50, rmargin=10, spacing3=5)
+chat_area.tag_config("agent", foreground="black", background="#00ffcc", lmargin1=10, lmargin2=10, rmargin=50, spacing3=5)
+chat_area.tag_config("right", justify="right")
+
+# Message de bienvenue avec effet frappe
+typewriter_effect("Hello! 👋 I'm your Car Assistant.")
+typewriter_effect("You can ask me any question about your car problems 🚗")
+
+# Zone entrée
+frame = tk.Frame(root, bg="#1e1e1e")
+frame.pack(fill=tk.X, pady=5, padx=5)
+
+entry = tk.Entry(frame, font=("Arial", 12), bg="#2b2b2b", fg="white", insertbackground="white")
+entry.pack(side=tk.LEFT, padx=5, pady=5, fill=tk.X, expand=True)
+
+send_btn = tk.Button(frame, text="Send", command=ask_question, bg="#0078D7", fg="white", font=("Arial", 12, "bold"))
+send_btn.pack(side=tk.LEFT, padx=5)
+
+exit_btn = tk.Button(frame, text="Exit", command=exit_app, bg="red", fg="white", font=("Arial", 12, "bold"))
+exit_btn.pack(side=tk.LEFT, padx=5)
+
+root.mainloop()
