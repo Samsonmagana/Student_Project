@@ -19,6 +19,7 @@ def speak(text):
     engine.say(text)
     engine.runAndWait()
 
+
 # === Load dataset ===
 DATA_PATH = "car_problems.csv"
 df = pd.read_csv(DATA_PATH)
