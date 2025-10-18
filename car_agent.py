@@ -129,7 +129,7 @@ chat_area.tag_config("user", foreground="white", background="#0078D7", lmargin1=
 chat_area.tag_config("agent", foreground="black", background="#00ffcc", lmargin1=10, lmargin2=10, rmargin=50, spacing3=5)
 chat_area.tag_config("right", justify="right")
 
-# Message de bienvenue avec effet frappe
+# Welcome message with typing effect
 typewriter_effect("Hello! 👋 I'm your Car Assistant.")
 typewriter_effect("You can ask me any question about your car problems 🚗")
 
